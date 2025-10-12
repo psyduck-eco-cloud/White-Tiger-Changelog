@@ -474,7 +474,7 @@
 
 ---
 
-✅ *Builders and engineers benefit from a major maintenance overhaul. All heavy machinery and tools now last over twice as long, with zero workstation wear and universal access to key civic furniture. This update drastically reduces repair cycles and downtime.*
+✅ *Builders and engineers benefit from a major maintenance overhaul. All heavy machinery and tools now last over twice as long, with zero workstation wear and universal access to key civic furniture. This update drastically reduces repair cycles and downtime.* 
 
 # 🧩 Plugin / Miscellaneous Changes
 
