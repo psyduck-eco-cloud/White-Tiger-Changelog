@@ -2,15 +2,13 @@
 
 **Major Update Highlights**
 - All in-game parts now last **2.5× longer** (10h → 25h).
-- All crafting tables consume **0 durability/hour**.
-- Dozens of **recipes rebalanced** for food, hunting, and crafting.
-- **Professions reassigned** for better progression (Mechanics → Blacksmith, etc.).
-- **Skill Books** and **Scrolls** are now weightless and fully documented in the Ecopedia.
-- **Vehicles, machinery, and crafted parts** operate with reduced maintenance costs.
-- Early- and mid-game **food and energy balance** greatly improved.
-- Simplified **resource requirements** across ethanol, butchery, and milling chains.
-
-✅ *This comprehensive patch redefines progression pacing, reduces grind, and ensures all professions—from Hunters to Engineers—benefit from improved balance, extended durability, and accessible skill integration.*
+- **Fully balanced Advanced Food** at minimum all food will be 50 subtotal unless it is intermediate.
+- **Butcher and Campfire Elk** new recipes available to provide this hunt more use.
+- **Butcher byproduct balance** scrap meat, fur pelt, leather hide, shorn wool have all been adjusted for balancing the market excess and shortages.
+- **Skin tiny animals** available to hunters to help offset early game animal byproducts.
+- **Carcass weight reduced** generally across the board all weights have been reduced.
+- **Wiring reassigned** to Blacksmiths to have more utility (Copper Wiring & Gold Wiring).
+- Simplified **profession requirements** between ethanol, cheese, and biodiesel.
 
 # 🧍‍♂️ All Players
 
@@ -81,8 +79,6 @@
 - **Registrar:** Profession changed *Logging → Any*
 
 ---
-
-✅ *All Players benefit from increased part durability, workstation longevity, and improved skill book accessibility through Ecopedia. Transport and crafting logistics are now lighter and more sustainable.*
 
 # 🐾 Hunters
 
@@ -170,8 +166,6 @@
 
 ---
 
-✅ *Hunters now experience rebalanced animal weights and health values, improved skinning workflows tied to Hunting skill, and integration of new Butchery profession recipes. Yields, XP, and labor bonuses have been adjusted for balance and progression.*
-
 # ⚙️ Crafters / Industrialists
 
 **Profession Reassignments**
@@ -239,8 +233,6 @@
   - **Glassworking:** Fiberglass, LightBulb
 
 ---
-
-✅ *Crafters benefit from reduced skill requirements, faster production times, and reassignment of electrical components to Blacksmithing for progression balance. All mechanical and industrial tools now last significantly longer and require less maintenance.*
 
 # 🍖 Chefs / Food Producers
 
@@ -403,8 +395,6 @@
 
 ---
 
-✅ *Chefs and food producers gain massive rebalancing across all cooking and baking tiers. Nutritional distributions, ingredients, and calorie counts have been fine-tuned for consistency and realism. Butchery outputs and skill unlocks are now smoother for early progression and mid-tier food production.*
-
 # 🧵 Tailors
 
 **Production & Recipes**
@@ -420,8 +410,6 @@
   - **LinenFabric:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
 
 ---
-
-✅ *Tailors now produce twice the wool yarn per batch and experience no workstation wear. Fabric components last significantly longer, reducing the frequency of replacements and improving long-term efficiency.*
 
 # 🌾 Farmers / Millers / Oil Drillers
 
@@ -449,16 +437,17 @@
 
 ---
 
-✅ *Farming, milling, and oil drilling processes have been streamlined with lower material requirements and reduced skill gating. Equipment no longer consumes durability, ensuring continuous production without maintenance downtime.*
-
-# 🧱 Builders / Engineers
+# 🧱 Mining / Mechanics / Carpenters
 
 **Construction & Materials**
-- All **construction parts** now have extended lifespans:
+- All of the following **parts** now have extended lifespans:
   - **MillStone:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
   - **Mortar:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
   - **IronPlate, SteelPlate, CopperPlate, WoodenGear, IronGear, SteelGear, SteelGearbox, RubberWheel** — all extended to 25h part life.
   - **Boiler, CombustionEngine, PortableSteamEngine, Piston, Servo, Gearbox** also extended lifespans.
+
+- **CharredMortar**
+  - Crafting Time **0.16f → 0.10f**
 
 **WorldObjects / Tables**
 - **Arrastra, StampMill, ScreeningMachine, SensorBasedBeltSorter**  
@@ -468,24 +457,19 @@
 - **Sawmill**
   - DurabilityUsedPerHourOfUse **5 → 0**
 
-**Profession Unlocks**
+**Recipe reassignment**
 - **RealEstateDesk:** Profession *Carpentry → Any*
 - **Registrar:** Profession *Logging → Any*
 
 ---
 
-✅ *Builders and engineers benefit from a major maintenance overhaul. All heavy machinery and tools now last over twice as long, with zero workstation wear and universal access to key civic furniture. This update drastically reduces repair cycles and downtime.* 
-
-# 🧩 Plugin / Miscellaneous Changes
+# 🧩 Miscellaneous Changes
 
 **Recipes**
 - **IncinerateGarbage**
-  - ExperienceOnCraft **0 → 0.25**
-  - Calories in Labor **0 → 25** *(With Bonus of CampfireCooking)*
-  - Crafting Time **0 → 4 Minutes** *(With Bonus from CampfireCookingFocused / CampfireCookingParallel)*
-
-- **CharredMortar**
-  - Crafting Time **0.16f → 0.10f**
+  - ExperienceOnCraft **0 → 0.25** *(Experience to SelfImprovement)*
+  - Calories in Labor **500 → 500** *(With Bonus from SelfImprovement)*
+  - Crafting Time **4 Minutes → 4 Minutes** *(With Bonus from SelfImprovement)*
 
 ---
 
@@ -494,5 +478,3 @@
   - **Advanced Baking Book** - **Advanced Cooking Book** - **Advanced Masonry Book** - **Advanced Smelting Book** - **Baking Book** - **Basic Engineering Book** - **Blacksmith Book** - **Butchery Book** - **Carpentry Book** - **Composites Book** - **Cooking Book** - **Electronics Book** - **Farming Book** - **Fertilizers Book** - **Glassworking Book** - **Industry Book** - **Masonry Book** - **Mechanics Book** - **Milling Book** - **Oil Drilling Book** - **Paper Milling Book** - **Pottery Book** - **Shipwright Book** - **Smelting Book** - **Tailoring Book**
 
 ---
-
-✅ *Plugin and miscellaneous updates enhance world-building consistency, improve Ecopedia integration for all skills, and balance crafting times and experience across various utility recipes.*
