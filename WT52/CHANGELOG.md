@@ -8,7 +8,7 @@
 - **Skin tiny animals** available to hunters to help offset early game animal byproducts.
 - **Carcass weight reduced** generally across the board all weights have been reduced.
 - **Wiring reassigned** to Blacksmiths to have more utility (Copper Wiring & Gold Wiring).
-- Simplified **profession requirements** between ethanol, cheese yeast, biodiesel, etc.
+- **Streamlined profession requirements** for ethanol, cheese, yeast, and biodiesel.
 - **Incinerate Garbage** now scales and levels up self improvement slightly
 ---
 
@@ -375,7 +375,7 @@
 **Tech & Skill Items**
 - Added **Ecopedia pages** for all Skill Books:
   - Advanced Baking, Advanced Cooking, Advanced Masonry, Advanced Smelting, Baking, Basic Engineering, Blacksmith, Butchery, Carpentry, Composites, Cooking, Electronics, Farming, Fertilizers, Glassworking, Industry, Masonry, Mechanics, Milling, Oil Drilling, Paper Milling, Pottery, Shipwright, Smelting, Tailoring.
-- **PaintingBook:**
+- **PaintingSkillBook:**
   - `SelfImprovementLevelUp` **20 → 40**
   - Weight **1000 → 0**
 - **Skill Scrolls & Books:**
@@ -391,11 +391,5 @@
   - ExperienceOnCraft **0 → 0.25** *(Experience to SelfImprovement)*
   - Calories in Labor **500 → 500** *(With Bonus from SelfImprovement)*
   - Crafting Time **4 Minutes → 4 Minutes** *(With Bonus from SelfImprovement)*
-
----
-
-**Tech**
-- Added Ecopedia entries for:
-  - **Advanced Baking Book** - **Advanced Cooking Book** - **Advanced Masonry Book** - **Advanced Smelting Book** - **Baking Book** - **Basic Engineering Book** - **Blacksmith Book** - **Butchery Book** - **Carpentry Book** - **Composites Book** - **Cooking Book** - **Electronics Book** - **Farming Book** - **Fertilizers Book** - **Glassworking Book** - **Industry Book** - **Masonry Book** - **Mechanics Book** - **Milling Book** - **Oil Drilling Book** - **Paper Milling Book** - **Pottery Book** - **Shipwright Book** - **Smelting Book** - **Tailoring Book**
 
 ---
