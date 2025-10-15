@@ -1,4 +1,4 @@
-# 🧍‍♂️ Summary
+# 🧍‍♂️ WT52 Feedback Update Summary
 
 **Major Update Highlights**
 - **All** in-game parts now last **2.5× longer** (10h → 25h).
