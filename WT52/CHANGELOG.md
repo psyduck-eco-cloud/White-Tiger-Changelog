@@ -4,12 +4,12 @@
 - **All** in-game parts now last **2.5× longer** (10h → 25h).
 - **Fully balanced Advanced Food** at minimum all food will be 50 subtotal unless it is intermediate.
 - **Butcher Elk and Campfire Elk** new recipes available to provide this hunt more use.
-- **Butcher byproduct balanced** scrap meat, fur pelt, leather hide, shorn wool have all been adjusted for balancing the market excess and shortages.
+- **Butcher byproduct balanced** scrap meat, fur pelt, leather hide, shorn wool have all been adjusted for balancing - this fixes market excess and shortages.
 - **Skin tiny animals** available to hunters to help offset early game animal byproducts.
-- **Carcass weight reduced** generally across the board all weights have been reduced.
+- **Carcass weight generally reduced** across the board.
 - **Wiring reassigned** to Blacksmiths to have more utility (Copper Wiring & Gold Wiring).
 - **Streamlined profession requirements** for ethanol, cheese, yeast, and biodiesel.
-- **Incinerate Garbage** now scales and levels up self improvement slightly
+- **Incinerate Garbage** now scales and levels up self-improvement slightly
 ---
 
 # 🧍‍♂️ All Players
