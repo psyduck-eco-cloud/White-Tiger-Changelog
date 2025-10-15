@@ -1,14 +1,16 @@
 # 🧍‍♂️ Summary
 
 **Major Update Highlights**
-- All in-game parts now last **2.5× longer** (10h → 25h).
+- **All** in-game parts now last **2.5× longer** (10h → 25h).
 - **Fully balanced Advanced Food** at minimum all food will be 50 subtotal unless it is intermediate.
-- **Butcher and Campfire Elk** new recipes available to provide this hunt more use.
-- **Butcher byproduct balance** scrap meat, fur pelt, leather hide, shorn wool have all been adjusted for balancing the market excess and shortages.
+- **Butcher Elk and Campfire Elk** new recipes available to provide this hunt more use.
+- **Butcher byproduct balanced** scrap meat, fur pelt, leather hide, shorn wool have all been adjusted for balancing the market excess and shortages.
 - **Skin tiny animals** available to hunters to help offset early game animal byproducts.
 - **Carcass weight reduced** generally across the board all weights have been reduced.
 - **Wiring reassigned** to Blacksmiths to have more utility (Copper Wiring & Gold Wiring).
-- Simplified **profession requirements** between ethanol, cheese, and biodiesel.
+- Simplified **profession requirements** between ethanol, cheese yeast, biodiesel, etc.
+- **Incinerate Garbage** now scales and levels up self improvement slightly
+---
 
 # 🧍‍♂️ All Players
 
@@ -16,250 +18,54 @@
 - All in-game parts had `ReduceMaxDurabilityByPercent` adjusted **0.05 → 0.02**
   → Part lifespan increased from **~10 hours → ~25 hours** across all professions and crafting tiers.
   - Affected Parts:
-    - **Electronics:** Advanced Circuit, Basic Circuit, Electric Motor, Fuse
-    - **Industry:** Advanced Combustion Engine, Rubber Wheel, Steel Gear, Steel Gearbox, Steel Plate
-    - **Mechanics:** Boiler, Combustion Engine, Copper Plate, Gearbox, Iron Gear, Iron Plate, Piston, Portable Steam Engine, Servo
-    - **Blacksmith:** Cooking Utensils, Copper Wiring, Iron Saw Blade, Steel Saw Blade
-    - **Tailoring:** Cotton Fabric, Linen Fabric
-    - **Glassworking:** Fiberglass, Light Bulb
-    - **Shipwright:** Hemp Mooring Rope, Metal Rudder, Small Wooden Ship Frame, Wooden Hull Planks, Wooden Oar, Wooden Wheel
-    - **Masonry:** MillStone, Mortar
-    - **Paper Milling:** Paper
-    - **Oil Drilling:** Plastic
-    - **Basic Engineering:** Iron Wheel, Wooden Gear
-    - **Butchery:** Lubricant
+    - **Carpenter Profession:**
+      - **Logging:** Wooden Oar
+      - **Paper Milling:** Paper
+      - **Shipwright:** Hemp Mooring Rope, Metal Rudder, Small Wooden Ship Frame, Wooden Hull Planks
+    - **Engineer Profession:**
+      - **Basic Engineering:** Iron Wheel, Wooden Gear, Wooden Wheel
+      - **Electronics:** Advanced Circuit, Basic Circuit, Electric Motor, Fuse
+      - **Industry:** Advanced Combustion Engine, Rubber Wheel, Steel Gear, Steel Gearbox, Steel Plate
+      - **Mechanics:** Boiler, Combustion Engine, Copper Plate, Gearbox, Iron Gear, Iron Plate, Piston, Portable Steam Engine, Servo
+    - **Hunting Profession:**
+      - **Butchery:** Lubricant
+    - **Mason Profession:**
+      - **Glassworking:** Fiberglass, Light Bulb
+      - **Masonry:** MillStone, Mortar
+    - **Scientist Profession:**
+      - **Oil Drilling:** Plastic
+    - **Smith Profession:**
+      - **Blacksmith:** Cooking Utensils, Copper Wiring, Iron Saw Blade, Steel Saw Blade
+    - **Tailor Profession:**
+      - **Tailoring:** Cotton Fabric, Linen Fabric
 
-**Workstations / WorldObjects**
-- All power consuming crafting stations now consume **0 durability per hour of use** to prevent breaking every **10 hours** -> **25 hours**:
-  - AdvancedCarpentryTable
-  - AdvancedMasonryTable
-  - AdvancedTailoringTable
-  - Arrastra
-  - AssemblyLine
-  - AutomaticLoom
-  - ElectricLathe
-  - ElectricMachinistTable
-  - ElectricPlaner
-  - ElectricStampingPress
-  - ElectronicsAssembly
-  - FrothFloatationCell
-  - InjectionMoldMachine
-  - JawCrusher
-  - Lathe
-  - Mill
-  - PowerHammer
-  - PumpJack
-  - RoboticAssemblyLine
-  - RollingMill
-  - Sawmill
-  - ScreeningMachine
-  - ScrewPress
-  - SensorBasedBeltSorter
-  - Shaper
-  - SpinMelter
-  - StampMill
-  - Stove
-
-**Tech & Skill Items**
-- Added **Ecopedia pages** for all Skill Books:
-  - Advanced Baking, Advanced Cooking, Advanced Masonry, Advanced Smelting, Baking, Basic Engineering, Blacksmith, Butchery, Carpentry, Composites, Cooking, Electronics, Farming, Fertilizers, Glassworking, Industry, Masonry, Mechanics, Milling, Oil Drilling, Paper Milling, Pottery, Shipwright, Smelting, Tailoring.
-- **PaintingBook:**
-  - `SelfImprovementLevelUp` **20 → 40**
-  - Weight **1000 → 0**
-- **Skill Scrolls & Books:**
-  - All Skill Scrolls (Blacksmith, Painting, Paper Milling, Shipwright) Weight **100 → 0**
-  - All Books (BlacksmithBook, PaperMillingBook, ShipwrightBook, etc.) Weight **1000 → 0**
-
-**Vehicles**
-- **Egyptian Canoe:**
-  - StorageComponentSlots **6 → 5**
-
-**Professions**
-- **RealEstateDesk:** Profession changed *Carpentry → Any*
-- **Registrar:** Profession changed *Logging → Any*
-
+**Crafting Tables**
+- All power consuming crafting tables now consume **0 durability per hour of use** (`DurabilityUsedPerHourOfUse`) to prevent duplicate durability drain on parts. This caused all crafting tables like a Mill to last for 10 hours instead of our expected duration. Which is now **only** based on crafting an item uses the new `0.02` per craft. **5 ReduceMaxDurabilityByPercent -> 0 ReduceMaxDurabilityByPercent**:  
+  - **Affected Professions:**
+    - **Carpenter Profession:**
+      - **Carpentry:** Sawmill
+      - **Composites:** AdvancedCarpentryTable
+    - **Chef Profession:**
+      - **Advanced Cooking:** Stove
+    - **Engineer Profession:**
+      - **Electronics:** ElectronicsAssembly
+      - **Industry:** ElectricLathe, ElectricMachinistTable, ElectricPlaner, ElectricStampingPress, RoboticAssemblyLine
+      - **Mechanics:** AssemblyLine, Lathe, ScrewPress, Shaper StampMill
+    - **Farming Profession:**
+      - **Milling:** Mill
+    - **Mason Profession:**
+      - **Advanced Masonry:** AdvancedMasonryTable
+      - **Mining:** Arrastra, FrothFloatationCell, JawCrusher, ScreeningMachine, SensorBasedBeltSorter
+    - **Scientist Profession:**
+      - **Oil Drilling:** InjectionMoldMachine, PumpJack
+    - **Smith Profession:**
+      - **Advanced Smelting:** RollingMill
+      - **Blacksmith:** PowerHammer
+    - **Tailor Profession:**
+      - **Tailoring:** AdvancedTailoringTable, AutomaticLoom, SpinMelter
 ---
 
-# 🐾 Hunters
-
-**Animals**
-- **Snapping Turtle:**
-  - Health **4.5 → 2.5**
-- **Turkey:**
-  - Health **2 → 1.5**
-
-**Carcass Weight Adjustments**
-- **AgoutiCarcass:** Weight **2000 → 500**
-- **BisonCarcass:** Weight **5500 → 6000**
-- **CoyoteCarcass:** Weight **2000 → 1500**
-- **FoxCarcass:** Weight **2000 → 1500**
-- **HareCarcass:** Weight **1000 → 500**
-- **OtterCarcass:** Weight **1000 → 500**
-- **PrairieDogCarcass:** Weight **1000 → 500**
-- **SnappingTurtleCarcass:** Weight **2000 → 500**
-- **TurkeyCarcass:** Weight **1000 → 500**
-- **WolfCarcass:** Weight **2000 → 1500**
-
----
-
-**Recipes: Hunting & Skinning**
-- **SkinHare**
-  - Profession: *None → Hunting*
-  - Ingredient: `HareCarcass` **0 → 1**
-  - Output: `FurPelt` **0 → 1**
-  - Output: `ShornWool` **0 → 1**
-  - ExperienceOnCraft: **0 → 2**
-  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
-  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
-  - Crafting Table: `FletchingTable`
-
-- **SkinTinyAnimal**
-  - Profession: *None → Hunting*
-  - Ingredient: `TinyLeatherCarcass` **0 → 1**
-  - Output: `LeatherHide` **0 → 1**
-  - ExperienceOnCraft: **0 → 2**
-  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
-  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
-  - Crafting Table: `FletchingTable`
-
-- **SkinTinyFurAnimal**
-  - Profession: *None → Hunting*
-  - Ingredient: `TinyFurCarcass` **0 → 1**
-  - Output: `FurPelt` **0 → 1**
-  - ExperienceOnCraft: **0 → 2**
-  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
-  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
-  - Crafting Table: `FletchingTable`
-
----
-
-**Recipes: Butchery Integration**
-- **Butcher Elk**
-  - Profession: *None → Butchery*
-  - Ingredient: `ElkCarcass` **0 → 1**
-  - Output: `RawMeat` **0 → 7**
-  - Output: `LeatherHide` **0 → 3**
-  - Output: `FurPelt` **0 → 1**
-  - ExperienceOnCraft: **0 → 5**
-  - Calories in Labor: **0 → 70** *(With Bonus of Butchery)*
-  - Crafting Time: **0 → 2 Minutes** *(With Bonus from ButcheryFocused / ButcheryParallel)*
-  - Crafting Table: `ButcheryTable`
-
-- **Campfire Elk**
-  - Profession: *None → CampfireCooking*
-  - Ingredient: `ElkCarcass` *(Added)*
-  - Output: `CharredMeat` **0 → 7**
-  - Output: `TallowItem` **0 → 2**
-  - ExperienceOnCraft: **0 → 5**
-  - Calories in Labor: **0 → 25** *(With Bonus of CampfireCooking)*
-  - Crafting Time: **0 → 4 Minutes** *(With Bonus from CampfireCookingFocused / CampfireCookingParallel)*
-  - Crafting Table: `Campfire`
-
-- **ButcherMediumAnimal**
-  - Output: `LeatherHide` **1 → 3**
-
-- **ButcherMediumWoolyAnimal**
-  - Output: `ShornWool` **2 → 4**
-
-- **ButcherBison**
-  - Ingredient: `ShornWool` **3 → 1**
-
----
-
-# ⚙️ Crafters / Industrialists
-
-**Profession Reassignments**
-- **CopperWiring**
-  - Profession: *Mechanics → Blacksmith*
-  - Ingredient Bonus: *Mechanics Lavish → Blacksmith Lavish*
-  - Crafting Time Bonus: *Mechanics Focused / Parallel → Blacksmith Focused / Parallel Processing*
-  - Calorie Bonus: *Mechanics Skill → Blacksmith Skill*
-  - `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-
-- **GoldWiring**
-  - Profession: *Mechanics → Blacksmith*
-  - Table: *ElectricMachinistTable → MachinistTable*
-  - Ingredient Bonus: *Mechanics Lavish → Blacksmith Lavish*
-  - Crafting Time Bonus: *Mechanics Focused / Parallel → Blacksmith Focused / Parallel Processing*
-  - Calorie Bonus: *Mechanics Skill → Blacksmith Skill*
-  - `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-
----
-
-**Crafting & Materials**
-- **Fiberglass**
-  - Crafting Time: **2f → 1.5f**
-  - `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-
-- **Oil Drilling - Biodiesel**
-  - Required Skill: **5 → 3**
-
----
-
-**Machinery / Blacksmithing Integration**
-- **MachinistTable**
-  - Added *Blacksmith Lavish* and *Blacksmith Frugal* room tier requirements
-  - Added *Blacksmith AdvancedUpgrade* plugin module compatibility
-
-- **PowerHammer**
-  - DurabilityUsedPerHourOfUse **5 → 0**
-
----
-
-**Workstation & Tool Durability**
-- All crafting stations under Mechanics, Electronics, Industry, and Blacksmith now consume **0 Durability/Hour**:
-  - AssemblyLine  
-  - ElectricMachinistTable  
-  - ElectricLathe  
-  - ElectricPlaner  
-  - ElectricStampingPress  
-  - Lathe  
-  - RollingMill  
-  - RoboticAssemblyLine  
-  - Shaper  
-  - ScrewPress  
-  - PumpJack  
-  - InjectionMoldMachine  
-  - PowerHammer  
-
----
-
-**Materials / Components Durability**
-- The following components have extended lifespan (`ReduceMaxDurabilityByPercent` **0.05 → 0.02**, 10h → 25h):
-  - **Mechanics:** Boiler, CombustionEngine, CopperPlate, Gearbox, IronGear, IronPlate, Piston, PortableSteamEngine, Servo
-  - **Electronics:** AdvancedCircuit, BasicCircuit, ElectricMotor, Fuse
-  - **Industry:** AdvancedCombustionEngine, RubberWheel, SteelGear, SteelGearbox, SteelPlate
-  - **Blacksmith:** CookingUtensils, CopperWiring, IronSawBlade, SteelSawBlade
-  - **Glassworking:** Fiberglass, LightBulb
-
----
-
-# 🍖 Chefs / Food Producers
-
-**Butchery Recipes**
-- **PreparedMeat**
-  - Output: `ScrapMeat` **4 → 2**
-- **PrimeCut**
-  - Ingredient: `RawMeat` **16 → 12**
-  - Output: `ScrapMeat` **0 → 3**
-- **RawBacon**
-  - Output: `ScrapMeat` **3 → 2**
-- **SunCheese**
-  - Profession Skill: **3 → 4**
-- **Yeast**
-  - Profession Skill: **4 → 3**
-
----
-
-**Milling / Processed Foods**
-- **ProcessedSunCheese**
-  - Unlock Level: **3 → 4**
-- **ProcessedYeast**
-  - Unlock Level: **4 → 3**
-
----
-
-## 🥐 Advanced Baking Foods
+# 🥐 Advanced Baking
 
 - **Bearclaw**
   - Carbs **14 → 17**
@@ -291,7 +97,7 @@
 
 ---
 
-## 🍲 Advanced Cooking Foods
+# 🍲 Advanced Cooking
 
 - **AgoutiEnchiladas**
   - Fat **27 → 23**
@@ -395,7 +201,131 @@
 
 ---
 
-# 🧵 Tailors
+# 🐾 Hunter
+
+**Animals**
+- **Snapping Turtle:**
+  - Health **4.5 → 2.5**
+- **Turkey:**
+  - Health **2 → 1.5**
+
+**Carcass Weight Adjustments**
+- **AgoutiCarcass:** Weight **2000 → 500**
+- **BisonCarcass:** Weight **5500 → 6000**
+- **CoyoteCarcass:** Weight **2000 → 1500**
+- **FoxCarcass:** Weight **2000 → 1500**
+- **HareCarcass:** Weight **1000 → 500**
+- **OtterCarcass:** Weight **1000 → 500**
+- **PrairieDogCarcass:** Weight **1000 → 500**
+- **SnappingTurtleCarcass:** Weight **2000 → 500**
+- **TurkeyCarcass:** Weight **1000 → 500**
+- **WolfCarcass:** Weight **2000 → 1500**
+
+---
+
+**New: Skinning Recipes**
+- **SkinHare**
+  - Profession: *None → Hunting*
+  - Ingredient: `HareCarcass` **0 → 1**
+  - Output: `FurPelt` **0 → 1**
+  - Output: `ShornWool` **0 → 1**
+  - ExperienceOnCraft: **0 → 2**
+  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
+  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
+  - Crafting Table: `FletchingTable`
+
+- **SkinTinyAnimal**
+  - Profession: *None → Hunting*
+  - Ingredient: `TinyLeatherCarcass` **0 → 1**
+  - Output: `LeatherHide` **0 → 1**
+  - ExperienceOnCraft: **0 → 2**
+  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
+  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
+  - Crafting Table: `FletchingTable`
+
+- **SkinTinyFurAnimal**
+  - Profession: *None → Hunting*
+  - Ingredient: `TinyFurCarcass` **0 → 1**
+  - Output: `FurPelt` **0 → 1**
+  - ExperienceOnCraft: **0 → 2**
+  - Calories in Labor: **0 → 25** *(With Bonus of Hunting)*
+  - Crafting Time: **0 → 30 Seconds** *(With Bonus from ButcheryFocused / ButcheryParallel)*
+  - Crafting Table: `FletchingTable`
+
+---
+
+# 🍖 Campfire Cooking / Butchery
+
+**New: Elk Recipes**
+- **Campfire Elk**
+  - Profession: *None → CampfireCooking*
+  - Ingredient: `ElkCarcass` *(Added)*
+  - Output: `CharredMeat` **0 → 7**
+  - Output: `TallowItem` **0 → 2**
+  - ExperienceOnCraft: **0 → 5**
+  - Calories in Labor: **0 → 25** *(With Bonus of CampfireCooking)*
+  - Crafting Time: **0 → 4 Minutes** *(With Bonus from CampfireCookingFocused / CampfireCookingParallel)*
+  - Crafting Table: `Campfire`
+
+- **Butcher Elk**
+  - Profession: *None → Butchery*
+  - Ingredient: `ElkCarcass` **0 → 1**
+  - Output: `RawMeat` **0 → 7**
+  - Output: `LeatherHide` **0 → 3**
+  - Output: `FurPelt` **0 → 1**
+  - ExperienceOnCraft: **0 → 5**
+  - Calories in Labor: **0 → 70** *(With Bonus of Butchery)*
+  - Crafting Time: **0 → 2 Minutes** *(With Bonus from ButcheryFocused / ButcheryParallel)*
+  - Crafting Table: `ButcheryTable`
+
+**Rebalance Butchery Byproducts**
+- **ButcherMediumAnimal**
+  - Output: `LeatherHide` **1 → 3**
+
+- **ButcherMediumWoolyAnimal**
+  - Output: `ShornWool` **2 → 4**
+
+- **ButcherBison**
+  - Ingredient: `ShornWool` **3 → 1**
+
+**Butchery Recipes**
+- **PreparedMeat**
+  - Output: `ScrapMeat` **4 → 2**
+- **PrimeCut**
+  - Ingredient: `RawMeat` **16 → 12**
+  - Output: `ScrapMeat` **0 → 3**
+- **RawBacon**
+  - Output: `ScrapMeat` **3 → 2**
+---
+
+# ⚙️ Blacksmith / Mechanics / Glassworking
+
+**Profession Reassignments**
+- **CopperWiring**
+  - Profession: *Mechanics → Blacksmith*
+  - Ingredient Bonus: *Mechanics Lavish → Blacksmith Lavish*
+  - Crafting Time Bonus: *Mechanics Focused / Parallel → Blacksmith Focused / Parallel Processing*
+  - Calorie Bonus: *Mechanics Skill → Blacksmith Skill*
+
+- **GoldWiring**
+  - Profession: *Mechanics → Blacksmith*
+  - Table: *ElectricMachinistTable → MachinistTable*
+  - Ingredient Bonus: *Mechanics Lavish → Blacksmith Lavish*
+  - Crafting Time Bonus: *Mechanics Focused / Parallel → Blacksmith Focused / Parallel Processing*
+  - Calorie Bonus: *Mechanics Skill → Blacksmith Skill*
+
+- **MachinistTable**
+  - Added *Blacksmith Lavish* and *Blacksmith Frugal* room tier requirements
+  - Added *Blacksmith AdvancedUpgrade* plugin module compatibility
+---
+
+**Crating speed**
+- **Fiberglass**
+  - Crafting Time: **2f → 1.5f**
+
+---
+
+# 🧵 Tailor
 
 **Production & Recipes**
 - **WoolYarn**
@@ -403,15 +333,9 @@
 - **SpinWoolYarn**
   - Output **1 → 2** (updated to match WoolYarn)
 
-**Durability Adjustments**
-- **Tailoring Tables** now consume **0 durability per hour of use**
-- **Tailoring Parts**
-  - **CottonFabric:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-  - **LinenFabric:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-
 ---
 
-# 🌾 Farmers / Millers / Oil Drillers
+# 🌾 Farming / Milling / Oil Drilling
 
 **Farming**
 - **CornEthanol**
@@ -420,42 +344,25 @@
   - Ingredient: `Wheat` **10 → 9**
 
 **Milling**
+- **SunCheese**
+  - Profession Skill: **3 → 4**
 - **ProcessedSunCheese**
-  - Unlock Level **3 → 4**
+  - Unlock Level: **3 → 4**
+- **Yeast**
+  - Profession Skill: **4 → 3**
 - **ProcessedYeast**
-  - Unlock Level **4 → 3**
-- **Milling Table**
-  - DurabilityUsedPerHourOfUse **5 → 0**
+  - Unlock Level: **4 → 3**
 
 **Oil Drilling**
 - **Biodiesel**
   - Required Skill **5 → 3**
-- **PumpJack**
-  - DurabilityUsedPerHourOfUse **5 → 0**
-- **Plastic**
-  - `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
 
 ---
 
-# 🧱 Mining / Mechanics / Carpenters
-
-**Construction & Materials**
-- All of the following **parts** now have extended lifespans:
-  - **MillStone:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-  - **Mortar:** `ReduceMaxDurabilityByPercent` **0.05 → 0.02** (10h → 25h lifespan)
-  - **IronPlate, SteelPlate, CopperPlate, WoodenGear, IronGear, SteelGear, SteelGearbox, RubberWheel** — all extended to 25h part life.
-  - **Boiler, CombustionEngine, PortableSteamEngine, Piston, Servo, Gearbox** also extended lifespans.
+# 🧱 Mining / Carpentry / Logging
 
 - **CharredMortar**
   - Crafting Time **0.16f → 0.10f**
-
-**WorldObjects / Tables**
-- **Arrastra, StampMill, ScreeningMachine, SensorBasedBeltSorter**  
-  DurabilityUsedPerHourOfUse **5 → 0**
-- **AdvancedMasonryTable**
-  - DurabilityUsedPerHourOfUse **5 → 0**
-- **Sawmill**
-  - DurabilityUsedPerHourOfUse **5 → 0**
 
 **Recipe reassignment**
 - **RealEstateDesk:** Profession *Carpentry → Any*
@@ -464,6 +371,20 @@
 ---
 
 # 🧩 Miscellaneous Changes
+
+**Tech & Skill Items**
+- Added **Ecopedia pages** for all Skill Books:
+  - Advanced Baking, Advanced Cooking, Advanced Masonry, Advanced Smelting, Baking, Basic Engineering, Blacksmith, Butchery, Carpentry, Composites, Cooking, Electronics, Farming, Fertilizers, Glassworking, Industry, Masonry, Mechanics, Milling, Oil Drilling, Paper Milling, Pottery, Shipwright, Smelting, Tailoring.
+- **PaintingBook:**
+  - `SelfImprovementLevelUp` **20 → 40**
+  - Weight **1000 → 0**
+- **Skill Scrolls & Books:**
+  - All Skill Scrolls (Blacksmith, Painting, Paper Milling, Shipwright) Weight **100 → 0**
+  - All Books (BlacksmithBook, PaperMillingBook, ShipwrightBook, etc.) Weight **1000 → 0**
+
+**Vehicles**
+- **Egyptian Canoe:**
+  - StorageComponentSlots **6 → 5**
 
 **Recipes**
 - **IncinerateGarbage**
